@@ -1,6 +1,8 @@
 {
     "private": true,
     "scripts": {
+        "gulp prod": "gulp --production",
+        "gulp dev": "gulp watch",
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
@@ -11,17 +13,23 @@
     },
     "devDependencies": {
         "axios": "^0.18",
+        "babel-plugin-transform-runtime": "^6.23.0",
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
+        "gulp": "^3.8.8",
         "jquery": "^3.2",
+        "laravel-elixir": "*",
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.5",
         "popper.js": "^1.12",
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
-        "vue": "^2.5.17",
-        "vue-template-compiler": "^2.6.10"
+        "vue": "^2.6.11",
+        "vue-axios": "^2.1.5",
+        "vue-router": "^3.1.5",
+        "vue-template-compiler": "^2.6.10",
+        "vueify": "^9.4.1"
     },
     "dependencies": {
         "github-markdown-css": "^3.0.1",
@@ -29,5 +37,8 @@
         "npm": "^6.9.0",
         "simplemde": "^1.11.2",
         "yarn": "^1.13.0"
+    },
+    "browserify": {
+        "transform": [      "vueify"    ]
     }
 }

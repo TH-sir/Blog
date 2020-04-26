@@ -25,7 +25,6 @@ mix.js('resources/assets/js/admin.js', 'public/js/admin.js');
 // web css, js
 mix.sass('resources/assets/css/web.scss', 'public/css/web.css');
 mix.js(['resources/assets/js/web.js'], 'public/js/web.js');
-
 // version
 if (mix.config.inProduction) {
     mix.version();

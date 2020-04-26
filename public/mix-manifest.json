@@ -3,6 +3,7 @@
     "/css/default.css": "/css/default.css",
     "/css/base.css": "/css/base.css",
     "/css/web.css": "/css/web.css",
+    "/js/bundle.js": "/js/bundle.js",
     "/js/web.js": "/js/web.js",
     "/css/admin.css": "/css/admin.css"
 }

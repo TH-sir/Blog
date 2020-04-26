@@ -21,19 +21,28 @@
                 {{--<button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>--}}
                 {{--</form>--}}
                 @guest()
-                    <a class="btn btn-sm btn-outline-light btn-border-circle mr-2 my-2" href="{{ route('login') }}">Sign
-                        in</a>
-                    <a class="btn btn-sm btn-outline-light btn-border-circle my-2" href="{{ route('register') }}">Sign
-                        up</a>
+                    <a class="btn btn-sm btn-outline-light btn-border-circle mr-2 my-2" href="{{ route('login') }}">登录</a>
+                    <a class="btn btn-sm btn-outline-light btn-border-circle my-2" href="{{ route('register') }}">注册</a>
                 @else
-                    <a class="btn btn-sm btn-outline-light btn-border-circle mr-2 my-2 active"
-                       href="#">Hi, {{ Auth::user()->name }}</a>
-                    <a class="btn btn-sm btn-outline-light btn-border-circle my-2" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                        {{ __('Sign out') }}
-                    </a>
-
-                    <a class="btn btn-sm btn-outline-light btn-border-circle my-2" href="{{url('/blog/new')}}" style="margin-left: 10px">发布新文章</a>
+                    <div class="btn-group">
+                        <a class="btn btn-sm btn-outline-light btn-border-circle mr-2 my-2 active dropdown-toggle"
+                           data-toggle="dropdown" href="#">Hi, {{ Auth::user()->name }}</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">我关注的人</a>
+                            <a class="dropdown-item" href="#">我的收藏</a>
+                            <a class="dropdown-item" href="{{route('home.blog.console')}}">我的博客</a>
+                            <a class="dropdown-item" href="#">草稿箱</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{route('home.blog.main',base64_encode(Auth::user()->email))}}">个人中心</a>
+                            <a class="dropdown-item" href="#">账号设置</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">帮助</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();document.getElementById('logout-form').submit();"
+                            >退出</a>
+                        </div>
+                    </div>
+                    <a class="btn btn-sm btn-outline-light btn-border-circle my-2" href="{{url('/blog/new')}}" style="margin-left: 10px">创建新博客</a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
@@ -51,3 +60,12 @@
         </nav>
     </div>
 </div>
+<script>
+    $(".btn-group").mouseover(function () {
+        $('.dropdown-menu').show();
+    });
+    //鼠标移开样式
+    $(".btn-group").mouseout(function () {
+        $('.dropdown-menu').hide();
+    });
+</script>

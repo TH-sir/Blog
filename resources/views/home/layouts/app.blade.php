@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src="{{asset('js/jquery.min.js')}}"></script>
     @section('title')
         <title>@if(isset($meta)){{ $meta['title'] }}@else{{ config("vienblog.blog.name") }}@endif</title>
     @show
@@ -57,6 +58,7 @@
     <script src="{{ mix('js/web.js') }}"></script>
     <script src="{{ asset('js/jquery.lazyload.min.js') }}"></script>
     <script src="{{ asset('js/jquery.scrollstop.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script>
         $("img.lazyload").lazyload({
             threshold: 600,

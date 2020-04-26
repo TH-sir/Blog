@@ -15,18 +15,23 @@
     @show
     @section('css_ext')
     @show
-
+    <style>
+        .ml-sm-auto, .mx-sm-auto{
+            left: 10% ;
+            margin-left: unset;
+        }
+    </style>
 </head>
 <body>
 {{--@include('admin.layouts.header')--}}
 
 {{--<main class="py-4">--}}
-<div class="container-fluid">
+<div class="container-fluid ">
     <div class="row">
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <main role="main" class="col-md-12 ml-sm-auto col-lg-10 pt-3 px-4">
             @include('admin.layouts.alert')
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h2 class="h2">新文章</h2>
+                <a href="{{route('home.blog.console')}}"><h3 class="h3">⇇ 文章管理</h3></a>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <button type="submit" class="btn btn-sm btn-primary mr-1"
                             onclick="event.preventDefault();document.getElementById('new-form').submit();">

@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends CommonController
 {
-    //
+
     public function show($category)
     {
         $size = 20;

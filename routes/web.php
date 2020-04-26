@@ -59,6 +59,11 @@ Route::group(['prefix' => 'admin', ], function () {
 Route::group(['middleware' => 'auth:web', ], function () {
     Route::get('/blog/new', 'Home\Blog\ArticleNewController@new')->name('home.blog.article.new');
     Route::post('/blog/new', 'Admin\Blog\ArticleController@store')->name('home.blog.article.store');
+    //个人中心
+    Route::get('/main/{main}','Home\Blog\MainController@index')->name('home.blog.main');
+    Route::get('/article/console','Home\Blog\MainController@Articleconsole')->name('home.blog.console');
+    Route::get('/article/favourite/{id}','Home\Blog\MainController@favourite')->name('home.blog.favourite');
+
 });
 
 Route::get('/friend-links', 'Home\Index\LinkController@index')->name('home.blog.link.friend');

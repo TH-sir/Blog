@@ -22,7 +22,7 @@ window.markdown_editor = function () {
             link: ["[", "](https://)"],
             table: ["", "\n\n| Column 1 | Column 2 | Column 3 |\n| -------- | -------- | -------- |\n| Text     | Text      | Text     |\n\n"],
         },
-        placeholder: "Type here...",
+        placeholder: "在这写上你的想法...",
         spellChecker: false,
         renderingConfig: {
             codeSyntaxHighlighting: true
@@ -31,24 +31,24 @@ window.markdown_editor = function () {
         toolbar: [
 
             {
-                name: "bold",
+                name: "加粗",
                 action: SimpleMDE.toggleBold,
                 className: "fa fa-bold",
-                title: "Bold"
+                title: "加粗"
             },
 
             {
                 name: "bold",
                 action: SimpleMDE.toggleItalic,
                 className: "fa fa-italic",
-                title: "Italic"
+                title: "斜体"
             },
 
             {
                 name: "strikethrough",
                 action: SimpleMDE.toggleStrikethrough,
                 className: "fa fa-strikethrough",
-                title: "Strikethrough"
+                title: "删除线"
             },
 
             '|',
@@ -57,28 +57,28 @@ window.markdown_editor = function () {
                 name: "heading",
                 action: SimpleMDE.toggleHeadingSmaller,
                 className: "fa fa-header",
-                title: "Heading"
+                title: "标题"
             },
 
             {
                 name: "heading-1",
                 action: SimpleMDE.toggleHeading1,
                 className: "fa fa-header fa-header-x fa-header-1",
-                title: "H1"
+                title: "一级标题"
             },
 
             {
                 name: "heading-2",
                 action: SimpleMDE.toggleHeading2,
                 className: "fa fa-header fa-header-x fa-header-2",
-                title: "H2"
+                title: "二级标题"
             },
 
             {
                 name: "heading-3",
                 action: SimpleMDE.toggleHeading1,
                 className: "fa fa-header fa-header-x fa-header-3",
-                title: "H3"
+                title: "三级标题"
             },
 
             '|',
@@ -87,35 +87,35 @@ window.markdown_editor = function () {
                 name: "code",
                 action: SimpleMDE.toggleCodeBlock,
                 className: "fa fa-code",
-                title: "Code"
+                title: "插入代码"
             },
 
             {
                 name: "quote",
                 action: SimpleMDE.toggleBlockquote,
                 className: "fa fa-quote-left",
-                title: "Quote"
+                title: "引用"
             },
 
             {
                 name: "unordered-list",
                 action: SimpleMDE.toggleUnorderedList,
                 className: "fa fa-list-ul",
-                title: "Generic List"
+                title: "无序列表"
             },
 
             {
                 name: "ordered-list",
                 action: SimpleMDE.toggleOrderedList,
                 className: "fa fa-list-ol",
-                title: "Numbered List"
+                title: "有序列表"
             },
 
             {
                 name: "horizontal-rule",
                 action: SimpleMDE.drawHorizontalRule,
                 className: "fa fa-minus",
-                title: "Insert Horizontal Line"
+                title: "插入水平线"
             },
 
             '|',
@@ -124,21 +124,21 @@ window.markdown_editor = function () {
                 name: "link",
                 action: SimpleMDE.drawLink,
                 className: "fa fa-link",
-                title: "Create Link"
+                title: "超链接"
             },
 
             {
                 name: "image",
                 action: SimpleMDE.drawImage,
                 className: "fa fa-picture-o",
-                title: "Insert Image"
+                title: "插入图片"
             },
 
             {
                 name: "table",
                 action: SimpleMDE.drawTable,
                 className: "fa fa-table",
-                title: "Insert Table"
+                title: "插入表格"
             },
 
             '|',
@@ -147,21 +147,21 @@ window.markdown_editor = function () {
                 name: "preview",
                 action: SimpleMDE.togglePreview,
                 className: "fa fa-eye no-disable",
-                title: "Toggle Preview"
+                title: "预览"
             },
 
             {
                 name: "side-by-side",
                 action: SimpleMDE.toggleSideBySide,
                 className: "fa fa-columns no-disable no-mobile",
-                title: "Toggle Side by Side"
+                title: "实时预览"
             },
 
             {
                 name: "fullscreen",
                 action: SimpleMDE.toggleFullScreen,
                 className: "fa fa-arrows-alt no-disable no-mobile",
-                title: "Toggle Fullscreen"
+                title: "切换全屏"
             },
 
             {
@@ -170,7 +170,7 @@ window.markdown_editor = function () {
                     window.open("https://vienblog.com/markdown-yu-fa")
                 },
                 className: "fa fa-question-circle",
-                title: "Help"
+                title: "帮助"
             }
         ]
     });

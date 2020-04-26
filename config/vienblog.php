@@ -36,7 +36,7 @@ return [
             ],
             [
                 "title" => "科学上网",
-                "url" => "http://www.blog.com/category/科学上网" // 链接URL
+                "url" => "/category/科学上网" // 链接URL
             ],
             [
                 "title" => "网站导航",
