@@ -1,15 +1,6 @@
  # laravel-blog
 Vien Blog - 一款基于laravel5.8开发的，支持markdown编辑以及图片拖拽上传的博客系统、SEO友好
 
-## 博主网站
-
-- [VienBlog](https://vienblog.com)
-- [这里有些小秘密](https://vien.tech)
-
-## 项目Github地址
-
-Github: [laravel-blog](https://github.com/luvvien/laravel-blog) ，欢迎Star。
-
 ## 博客亮点
 
 - 界面简洁、适配pc和mobile、有良好的视觉体验
@@ -22,14 +13,14 @@ Github: [laravel-blog](https://github.com/luvvien/laravel-blog) ，欢迎Star。
 
 ## 博客展示
 
-Demo演示地址: [这是一个DEMO](https://vienblog.com)
+Demo演示地址: [这是一个DEMO](https://47.94.228.2)
 
 ### 后台管理
 
 #### 文章列表
 
 主要操作有查询、创作、编辑、置顶、删除（软删除）
-![Laravel Markdown Blog Admin 文章列表 - VienBlog](https://vienblog.com/storage/images/article/20190412/LIn93Jcw8cOmxSKRLEVYyDolRcVbxqS2AAXQiNOg.png)
+(https://vienblog.com/storage/images/article/20190412/LIn93Jcw8cOmxSKRLEVYyDolRcVbxqS2AAXQiNOg.png)
 
 #### 创作和编辑
 
