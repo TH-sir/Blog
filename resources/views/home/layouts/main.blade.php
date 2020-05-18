@@ -34,28 +34,39 @@
 <body>
 
 <main role="main" class="container">
+    <div id="info"></div>
     <div class="row">
         @include('home.layouts.header')
        <div class="container" style="padding-top: 15px;">
            <div class="row">
                 <div class="col-md-2 column ui-sortable border" id="app">
                     <ul class="nav nav-pills flex-column">
-                           <li class="nav-item">
-                               <a href="javascript:void(0)" class="nav-link active z1">个人中心</a>
-                           </li>
-                           <li class="nav-item">
-                               <a href="#" class="nav-link z1">我的收藏</a>
-                           </li>
-                           <li class="nav-item">
-                               <a href="#" class="nav-link z1">我关注的人</a>
-                           </li>
-                           <li class="nav-item">
-                               <a href="{{ route('home.blog.console') }}" class="nav-link z1" οnclick="jump(this)";>我的博客</a>
-                           </li>
-                           <div class="dropdown-divider"></div>
-                           <li class="nav-item">
-                               <a href="#" class="nav-link z1">我的博客</a>
-                           </li>
+                        <li class="nav-item">
+                            <a href="{{route('home.main.focus')}}" class="nav-link z1">我关注的人</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('home.main.favourites')}}" class="nav-link z1">我的收藏</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('home.main.article') }}" class="nav-link z1">我的博客</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link z1">草稿箱</a>
+                        </li>
+                        <div class="dropdown-divider"></div>
+                        <li class="nav-item">
+                               <a href="{{route('home.main.main',base64_encode(Auth::user()->email))}}" class="nav-link active z1">个人中心</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link z1">账号设置</a>
+                        </li>
+                       <div class="dropdown-divider"></div>
+                       <li class="nav-item">
+                           <a href="#" class="nav-link z1">帮助</a>
+                       </li>
+                        <li class="nav-item">
+                            <a href="{{ route('logout') }}" class="nav-link z1">退出</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-md-10 column ui-sortable border" id="app">
@@ -74,11 +85,14 @@
        $(this).addClass("active");
    });
    $(".nav-pills li a").each(function(){
-       if($(this).attr('href') === window.location.href){
+        if($(this).attr('href') === window.location.href){
+            console.log(this.href)
            $(".nav-pills li a").removeClass("active");
            $(this).addClass("active");
        }
    })
+
+
   //console.log(window.location.href)
 </script>
 </html>

@@ -19,7 +19,7 @@ class User extends AuthBaseModel
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','avatar','introduce'
     ];
 
     /**

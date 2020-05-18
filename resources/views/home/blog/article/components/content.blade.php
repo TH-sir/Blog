@@ -13,21 +13,22 @@
 @show
 
 <div class="col-md-8 blog-main">
+    <div id="info"></div>
     <div class="border-bottom mb-3">
-        <a href="https://vienblog.com"></a>
+        <a href="#"></a>
     </div>
 
     <div class="blog-post mb-3">
         <h1 class="blog-post-title">{!! $article['title'] !!}</h1>
 
         <p class="blog-post-meta mb-0">
-           <a href="{{ route('home.blog.main',base64_encode($article['email'] ))}}">{{ $article['name'] }} </a> &nbsp;
+           <a href="{{ route('home.main.main',base64_encode($article['email'] ))}}">{{ $article['name'] }} </a> &nbsp;
             &nbsp;最后发布于{{ vn_time($article['created_at']) }} &nbsp;
             <a class="bg-gray-light"
                href="{{ route('home.blog.category.show', $article['category']['cate_name']) }}">
                 &nbsp;{{ $article['category']['cate_name'] }}
             </a>
-            &nbsp;<a href="{{route('home.blog.favourite',$article['id'])}}">收藏</a>
+            &nbsp;<a href="javascript:void(0)" onclick="favourite({{$article['id']}});">收藏</a>
         </p>
 
         <p class="blog-post-meta mt-0">
@@ -42,6 +43,37 @@
         </div>
     </div><!-- /.blog-post -->
 
+    <script>
+        function favourite (id) {
+            $.ajax({
+                url:'/article/favourite/' + id,
+                type:'GET',
+                success:function(res){
+                    if (res === '1') {
+                       $("#info").html('<div class="alert alert-success alert-dismissable">\n' +
+                           '            <button type="button" class="close" data-dismiss="alert"\n' +
+                           '                    aria-hidden="true">\n' +
+                           '                &times;\n' +
+                           '            </button>\n' +
+                           '            收藏成功！\n' +
+                           '        </div>')
+                    }else{
+                        $("#info").html('<div class="alert alert-warning alert-dismissable">\n' +
+                            '            <button type="button" class="close" data-dismiss="alert"\n' +
+                            '                    aria-hidden="true">\n' +
+                            '                &times;\n' +
+                            '            </button>\n' +
+                            '           您已收藏，请到我的收藏查看吧\n' +
+                            '        </div>')
+                    }
+
+                        },
+                error:function (res) {
+                    alert('收藏失败！请检查网络或稍后重试')
+                }
+                })
+        }
+    </script>
     {{--<nav class="blog-pagination">--}}
     {{--<a class="btn btn-outline-primary" href="#">Older</a>--}}
     {{--<a class="btn btn-outline-secondary" href="#">Newer</a>--}}

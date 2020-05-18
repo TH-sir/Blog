@@ -89,18 +89,72 @@
             font-size: 12px;
             color: #777;
         }
+        .mybtn{
+            width:100px;
+            height:30px;
+            display:inline-block;
+            background-color:rgb(91,183,91);
+            border:1px solid rgb(91,183,91);
+            border-radius:3px;
+            color:white;
+            font-size:14px;
+            font-family:微软雅黑;
+            cursor:pointer;
+            text-align:center;
+            vertical-align: center;
+            box-shadow:0px 0px 1px 1px rgb(91,160,91);
+        }
+        .mybtn:hover{
+            background-color:rgb(91,160,91);
+            border-color:rgb(91,160,91);
+            color:white;
+            text-decoration:none;
+        }
+        .myinp{
+            width:100px;
+            height:30px;
+            display:inline-block;
+            border:1px solid rgb(209,232,250);
+            border-radius:2px;
+        }
+        #div4bm{
+            padding-top:15px;
+            margin-right:15px;
+        }
+        #mybutton{
+            margin-left:100px;
+        }
+        #myimg{
+            width:120px;
+            height:120px;
+            border-radius: 50%;
+
+        }
 
     </style>
 @endsection
 
 @section('content')
-    <form class="form-signin" method="post" action="{{ route('register') }}">
+    <form class="form-signin" method="post" action="{{ route('register') }}" enctype="multipart/form-data">
         @csrf
         <div class="text-center mb-4">
-            <h1 class="h3 mb-3 font-weight-normal">欢迎注册 Vien Blog</h1>
+            <h1 class="h3 mb-3 font-weight-normal">欢迎注册 T-Sir Blog</h1>
             <a href="{{ route('login') }}">已有账号? 直接登录</a></p>
         </div>
-
+        <div class="form-label-group" >
+            <div id="div4bm">
+                <!--input[button] 触发 file click事件-->
+{{--                <input type="button" value="选择文件" id="mybutton" class="mybtn" onclick="Id('file').click();" />--}}
+                <!--file 隐藏起来 触发onchange事件-->
+                <input type="file" name="img" accept="image/png,image/jpg,image/jpeg" id="file" onchange="changeToop();" style="display:none;" />
+            </div>
+            <!--图片展示区域-->
+            <div style="text-align: center">
+                <!--设置默认图片-->
+                <img id="myimg" src="{{asset('images/avatars/相机.png')}}" onclick="Id('file').click();" name="img"/>
+            </div>
+        </div>
+<br>
         <div class="form-label-group">
             <input type="text" id="name" name="name" class="form-control form-control-lg{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="账号"
                    value="{{ old('name') }}" required autofocus>
@@ -140,6 +194,41 @@
         </div>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
-        <p class="mt-5 mb-3 text-muted text-center">&copy; {{ date('Y') }} <a href="https://vienblog.com">vienblog.com</a> </p>
+        <p class="mt-5 mb-3 text-muted text-center">&copy; {{ date('Y') }}  </p>
     </form>
+    <script>
+        function Id(id){
+            return document.getElementById(id);
+        }
+        function changeToop(){
+            var file = Id("file");
+            if(file.value==''){
+                //设置默认图片
+                Id("myimg").src='{{asset('images/avatars/相机.png')}}';
+            }else{
+                preImg("file","myimg");
+            }
+        }
+        //获取input[file]图片的url Important
+        function getFileUrl(fileId) {
+            var url;
+            var file = Id(fileId);
+            var agent = navigator.userAgent;
+            if (agent.indexOf("MSIE")>=1) {
+                url = file.value;
+            } else if(agent.indexOf("Firefox")>0) {
+                url = window.URL.createObjectURL(file.files.item(0));
+            } else if(agent.indexOf("Chrome")>0) {
+                url = window.URL.createObjectURL(file.files.item(0));
+            }
+            return url;
+        }
+        //读取图片后预览
+        function preImg(fileId,imgId) {
+            var imgPre =Id(imgId);
+            imgPre.src = getFileUrl(fileId);
+        }
+    </script>
 @endsection
+
+

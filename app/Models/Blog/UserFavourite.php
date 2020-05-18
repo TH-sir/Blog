@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Models\Visitor;
+namespace App\Models\Blog;
 
 use Illuminate\Database\Eloquent\Model;
 
 class UserFavourite extends Model
 {
-    protected $table  = 'blog_user_favourite';
+    protected $table  = 'blog_favourite';
+
 }

@@ -26,15 +26,14 @@
                 @else
                     <div class="btn-group">
                         <a class="btn btn-sm btn-outline-light btn-border-circle mr-2 my-2 active dropdown-toggle"
-                           data-toggle="dropdown" href="#">Hi, {{ Auth::user()->name }}</a>
+                           data-toggle="dropdown" href="#" onclick="location='{{route('home.main.main',base64_encode(Auth::user()->email))}}'">Hi, {{ Auth::user()->name }}</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">我关注的人</a>
-                            <a class="dropdown-item" href="#">我的收藏</a>
-                            <a class="dropdown-item" href="{{route('home.blog.console')}}">我的博客</a>
+                            <a class="dropdown-item" href="{{route('home.main.focus')}}">我关注的人</a>
+                            <a class="dropdown-item" href="{{route('home.main.favourites')}}">我的收藏</a>
+                            <a class="dropdown-item" href="{{route('home.main.article')}}">我的博客</a>
                             <a class="dropdown-item" href="#">草稿箱</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('home.blog.main',base64_encode(Auth::user()->email))}}">个人中心</a>
-                            <a class="dropdown-item" href="#">账号设置</a>
+                            <a class="dropdown-item" href="{{route('home.main.main',base64_encode(Auth::user()->email))}}">个人中心</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">帮助</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -68,4 +67,5 @@
     $(".btn-group").mouseout(function () {
         $('.dropdown-menu').hide();
     });
+
 </script>

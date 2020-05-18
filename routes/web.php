@@ -58,11 +58,19 @@ Route::group(['prefix' => 'admin', ], function () {
 //});
 Route::group(['middleware' => 'auth:web', ], function () {
     Route::get('/blog/new', 'Home\Blog\ArticleNewController@new')->name('home.blog.article.new');
-    Route::post('/blog/new', 'Admin\Blog\ArticleController@store')->name('home.blog.article.store');
+    Route::post('/blog/new', 'Home\Blog\ArticleNewController@store')->name('home.blog.article.store');
     //个人中心
-    Route::get('/main/{main}','Home\Blog\MainController@index')->name('home.blog.main');
-    Route::get('/article/console','Home\Blog\MainController@Articleconsole')->name('home.blog.console');
-    Route::get('/article/favourite/{id}','Home\Blog\MainController@favourite')->name('home.blog.favourite');
+    Route::get('/main/console','Home\Blog\MainController@index')->name('home.main.console');
+    //个人信息
+    Route::get('/main/{main}','Home\Blog\MainController@main')->name('home.main.main');
+    //关注的用户
+    Route::get('/main/user/focus','Home\Blog\MainController@focus')->name('home.main.focus');
+    //个人发布的博客
+    Route::get('/article/console','Home\Blog\MainController@Articleconsole')->name('home.main.article');
+    //展示收藏的博客
+    Route::get('/article/favorites','Home\Blog\MainController@favourites')->name('home.main.favourites');
+    Route::post('/avatar/modify','Home\Blog\MainController@modify')->name('avatar.modify');
+    Route::post('/password/reset','Home\Blog\MainController@resetPassword')->name('password.reset');
 
 });
 
@@ -70,3 +78,4 @@ Route::get('/friend-links', 'Home\Index\LinkController@index')->name('home.blog.
 Route::get('/{slug}', 'Home\Blog\ArticleController@show')->name('home.blog.article');
 Route::get('/category/{category}', 'Home\Blog\CategoryController@show')->name('home.blog.category.show');
 Route::get('/tag/{tag}', 'Home\Blog\TagController@show')->name('home.blog.tag.show');
+Route::get('/article/favourite/{id}','Home\Blog\MainController@favourite')->name('home.main.favourite');//添加收藏

@@ -9,7 +9,7 @@
 return [
     "blog" => [
         "name" => "T-Sir Blog", // 博客名称
-        "description" => "最好的Laravel Markdown Blog, 基于Laravel5.8构建, 支持Markdown编辑, 支持图片上传 - Vien Blog" // 博客描述(150字以内),
+        "description" => "最好的Laravel Markdown Blog, 基于Laravel5.8构建, 支持Markdown编辑, 支持图片上传" // 博客描述(150字以内),
     ],
     "author" => [ // 博主
         "name" => "T-Sir", // 名字

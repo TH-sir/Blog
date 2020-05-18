@@ -31,7 +31,7 @@
         <main role="main" class="col-md-12 ml-sm-auto col-lg-10 pt-3 px-4">
             @include('admin.layouts.alert')
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <a href="{{route('home.blog.console')}}"><h3 class="h3">⇇ 文章管理</h3></a>
+                <a href="{{route('home.main.console')}}"><h3 class="h3">⇇ 文章管理</h3></a>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <button type="submit" class="btn btn-sm btn-primary mr-1"
                             onclick="event.preventDefault();document.getElementById('new-form').submit();">
