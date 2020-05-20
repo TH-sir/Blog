@@ -110,6 +110,7 @@
             <div class="info">
                 <span style="margin-right: 16px;color:rgb(77,77,77);">关注&nbsp;&nbsp;1</span>
                 <span style="margin-right: 16px;color:rgb(77,77,77);">收藏&nbsp;&nbsp;{{$info['favourite']->count()}}</span>
+                <span style="margin-right: 16px;color:rgb(77,77,77);">我的博客&nbsp;&nbsp;{{$info['blog']}}</span>
             </div>
             <div class="line"></div>
            <ul class="self">

@@ -1,5 +1,12 @@
 @extends('home.layouts.main')
-
+<style>
+    @media (min-width: 768px){
+        .col-md-8 {
+            flex: 0 0 66.6666666667%;
+            max-width: 100% !important;
+        }
+    }
+</style>
 @section('content')
 
     <div class="col-md-8 blog-main">
@@ -14,6 +21,7 @@
 {{--                        <span class="badge badge-info align-top">{!! $article['category']['cate_name'] !!}</span>--}}
                         {!! $article['title'] !!}
                     </a>
+                    <a href="{{route('home.main.cancel',$article['id'])}}" class="btn btn-info btn-sm" style="float: right;border-radius: 10%;color: white">取消关注</a>
                     <p class="pt-1 mb-0 text-muted text-break">
                         {!! $article['description'] !!}
                     </p>

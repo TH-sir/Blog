@@ -69,6 +69,10 @@ Route::group(['middleware' => 'auth:web', ], function () {
     Route::get('/article/console','Home\Blog\MainController@Articleconsole')->name('home.main.article');
     //展示收藏的博客
     Route::get('/article/favorites','Home\Blog\MainController@favourites')->name('home.main.favourites');
+    Route::get('/article/del/{id}','Home\Blog\MainController@delete')->name('home.main.delete');
+    Route::get('/article/edit/{id}','Home\Blog\MainController@edit')->name('home.main.edit');
+    Route::get('/article/cancel/{id}','Home\Blog\MainController@cancel')->name('home.main.cancel');
+    Route::post('/article/update','Home\Blog\MainController@update')->name('home.main.update');
     Route::post('/avatar/modify','Home\Blog\MainController@modify')->name('avatar.modify');
     Route::post('/password/reset','Home\Blog\MainController@resetPassword')->name('password.reset');
 
