@@ -1,5 +1,5 @@
  # laravel-blog
-Vien Blog - 一款基于laravel5.8开发的，支持markdown编辑以及图片拖拽上传的博客系统、SEO友好
+一款基于laravel5.8开发的，支持markdown编辑以及图片拖拽上传的博客系统、SEO友好
 
 ## 博客亮点
 
@@ -40,7 +40,7 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-##### 创建MySQL数据库`vienblog` ，字符集采用 `utf8mb4`, `utf8mb4_general_ci`
+##### 创建MySQL数据库`blog` ，字符集采用 `utf8mb4`, `utf8mb4_general_ci`
 
 ##### 编辑`.env`文件 `vim .env`，修改MySQL数据库连接配置，请将`DB_HOST`，`DB_PORT`，`DB_USERNAME`，`DB_PASSWORD` 改成你的数据库配置。
 
@@ -50,7 +50,7 @@ php artisan key:generate
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=vienblog
+DB_DATABASE=blog
 DB_USERNAME=root
 DB_PASSWORD=root
 
